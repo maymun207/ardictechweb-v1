@@ -124,19 +124,19 @@ const LossAnalysis = () => {
           </div>
 
           {/* Right Metrics Block: Two Lines, Dash included on the first line */}
-          <div className="w-full lg:w-auto flex flex-col items-end">
+          <div className="w-full lg:w-auto flex flex-col items-end pt-12">
             <div className="text-[11px] font-bold tracking-[0.4em] text-cyan-500 uppercase mb-4 text-right">
               Total Addressable Loss
             </div>
             
             <div className="flex flex-col items-end mb-6">
               {/* Line 1: $48M- (White) */}
-              <div className="text-[8rem] lg:text-[10rem] font-black tracking-tighter text-white leading-[0.75] drop-shadow-[0_0_50px_rgba(255,255,255,0.05)]">
+              <div className="text-[3.528rem] lg:text-[4.41rem] font-black tracking-tighter text-white leading-[0.75] drop-shadow-[0_0_50px_rgba(255,255,255,0.05)]">
                 $48M-
               </div>
               
               {/* Line 2: $73M (White) with transparent dash for alignment */}
-              <div className="text-[8rem] lg:text-[10rem] font-black tracking-tighter text-white leading-[0.75] drop-shadow-[0_0_50px_rgba(255,255,255,0.05)]">
+              <div className="text-[3.528rem] lg:text-[4.41rem] font-black tracking-tighter text-white leading-[0.75] drop-shadow-[0_0_50px_rgba(255,255,255,0.05)]">
                 $73M<span className="text-transparent">-</span>
               </div>
             </div>
