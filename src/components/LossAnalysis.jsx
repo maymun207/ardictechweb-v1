@@ -116,7 +116,7 @@ const LossAnalysis = () => {
               <div className="w-12 h-[1px] bg-cyan-500" />
               <span>Diagnostic Analysis</span>
             </div>
-            <h1 className="text-6xl xl:text-[7rem] font-black leading-[0.85] tracking-tighter uppercase flex flex-col">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tighter uppercase flex flex-col">
               <span className="text-white/20 transition-all duration-700 hover:text-white/40 cursor-default">Unseen Data.</span>
               <span className="text-white/40 transition-all duration-700 hover:text-white/60 cursor-default">Silenced Value.</span>
               <span className="text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.1)] cursor-default">Untapped <br/>Potential.</span>
@@ -131,7 +131,7 @@ const LossAnalysis = () => {
             
             <div className="flex flex-col items-end mb-6">
               {/* Line 1: $48M- (White) */}
-              <div className="text-[3.528rem] lg:text-[4.41rem] font-black tracking-tighter text-white leading-[0.75] drop-shadow-[0_0_50px_rgba(255,255,255,0.05)]">
+              <div className="text-[3.528rem] lg:text-[4.41rem] font-black tracking-tighter text-white leading-[0.75] drop-shadow-[0_0_50px_rgba(255,255,255,0.05)]" style={{ marginBottom: '10px' }}>
                 $48M-
               </div>
               
