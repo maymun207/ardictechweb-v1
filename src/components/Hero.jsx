@@ -13,7 +13,8 @@ const translations = {
     hero: {
       label: 'DIGITAL TRANSFORMATION FOR MANUFACTURING',
       headline: 'Where should',
-      headlineHighlight: 'digital deliver value first?',
+      headlineHighlight: 'digital deliver',
+      headlineHighlight2: 'value first?',
       body: "Respect your legacy. Reinvent your factory. We identify addressable losses using your existing data before proposing architecture.",
       cta: 'Request Executive Assessment',
       constraintSelection: 'CONSTRAINT SELECTION',
@@ -57,7 +58,8 @@ const translations = {
     hero: {
       label: 'ÜRETİM İÇİN DİJİTAL DÖNÜŞÜM',
       headline: 'Dijital nerede',
-      headlineHighlight: 'önce değer sağlamalı?',
+      headlineHighlight: 'önce değer',
+      headlineHighlight2: 'sağlamalı?',
       body: "Mirasınıza saygı gösterin. Fabrikanızı yeniden icat edin. Mimari önermeden önce mevcut verilerinizi kullanarak adreslenebilir kayıpları belirliyoruz.",
       cta: 'Yönetici Değerlendirmesi Talep Et',
       constraintSelection: 'KISIT SEÇİMİ',
@@ -94,10 +96,10 @@ const translations = {
 
 // Metrics are the same across all languages
 const constraintMetrics = {
-  'eliminate-hidden-losses': '+30%',
-  'reduce-quality-drift': '+22%',
-  'optimize-energy-bom': '-28%',
-  'sync-lead-times': '-32%'
+  'eliminate-hidden-losses': '30%',
+  'reduce-quality-drift': '22%',
+  'optimize-energy-bom': '28%',
+  'sync-lead-times': '32%'
 }
 
 const constraintIds = [
@@ -265,9 +267,13 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tighter">
-              {t.hero.headline}{' '}
-              <span className="bg-gradient-to-r from-deep-magenta via-purple-500 via-cyan-400 to-cyan-300 bg-clip-text text-transparent">
+              {t.hero.headline}
+              <br />
+              <span className="bg-gradient-to-r from-deep-magenta via-purple-500 via-cyan-400 to-cyan-300 bg-clip-text text-transparent" style={{ display: 'block', marginTop: '2px' }}>
                 {t.hero.headlineHighlight}
+              </span>
+              <span className="bg-gradient-to-r from-deep-magenta via-purple-500 via-cyan-400 to-cyan-300 bg-clip-text text-transparent" style={{ display: 'block', marginTop: '2px' }}>
+                {t.hero.headlineHighlight2}
               </span>
             </h1>
 
@@ -313,7 +319,7 @@ export default function Hero() {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
                         transition={{ duration: 0.2 }}
-                        className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-deep-magenta to-cyan-400 bg-clip-text text-transparent"
+                        className="text-5xl lg:text-6xl font-bold text-white"
                       >
                         {currentData.metric}
                       </motion.div>
