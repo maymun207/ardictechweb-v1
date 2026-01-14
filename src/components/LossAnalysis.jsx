@@ -142,12 +142,12 @@ const LossAnalysis = () => {
             </div>
 
             <div className="flex flex-col items-end gap-2">
-              <div className="flex justify-end gap-6 text-[10px] font-bold tracking-[0.3em] text-gray-500 uppercase">
+              <div className="flex justify-end gap-6 text-[12px] font-semibold tracking-[0.3em] text-gray-400 uppercase">
                 <span>9 Months Payback</span>
                 <span className="w-1.5 h-1.5 bg-cyan-900 rounded-full self-center" />
                 <span>14-22 Months ROI</span>
               </div>
-              <div className="text-[10px] font-bold text-gray-700 tracking-[0.2em] uppercase bg-white/5 px-3 py-1 rounded">
+              <div className="text-[12px] font-semibold text-gray-400 tracking-[0.2em] uppercase bg-white/5 px-3 py-1 rounded">
                 Annual Loss Estimate (Per $500M Revenue)
               </div>
             </div>
@@ -161,39 +161,39 @@ const LossAnalysis = () => {
               key={card.id}
               onMouseEnter={() => setHoveredCard(card.id)}
               onMouseLeave={() => setHoveredCard(null)}
-              className="group relative h-[380px] rounded-[40px] overflow-hidden bg-white/[0.03] border border-white/5 transition-all duration-500 hover:bg-white/[0.08] hover:border-cyan-500/20"
+              className="group relative h-[304px] rounded-[32px] overflow-hidden bg-white/[0.03] border border-white/5 transition-all duration-500 hover:bg-white/[0.08] hover:border-cyan-500/20"
             >
-              <div className="absolute inset-0 p-12 flex flex-col justify-between z-20">
+              <div className="absolute inset-0 p-10 flex flex-col justify-between z-20">
                 <div className="flex justify-between items-start">
-                  <div className={`p-4 rounded-2xl bg-black border border-white/10 text-cyan-500 transition-all duration-500 ${hoveredCard === card.id ? 'scale-110 shadow-[0_0_20px_rgba(6,182,212,0.3)]' : ''}`}>
+                  <div className={`p-3 rounded-xl bg-black border border-white/10 text-cyan-500 transition-all duration-500 ${hoveredCard === card.id ? 'scale-110 shadow-[0_0_20px_rgba(6,182,212,0.3)]' : ''}`}>
                     {card.icon}
                   </div>
                   <div className={`transition-all duration-500 ${hoveredCard === card.id ? 'rotate-90 opacity-100' : 'opacity-20'}`}>
-                    <Maximize2 className="w-4 h-4 text-gray-500" />
+                    <Maximize2 className="w-3.5 h-3.5 text-gray-500" />
                   </div>
                 </div>
 
-                <div className={`transition-all duration-500 transform ${hoveredCard === card.id ? '-translate-y-12 opacity-0' : 'translate-y-0 opacity-100'}`}>
-                  <div className="text-[10px] font-bold tracking-[0.4em] text-gray-500 uppercase mb-3">{card.title}</div>
-                  <div className="text-5xl font-black tracking-tighter text-white mb-2">{card.number}</div>
-                  <div className="text-[10px] font-bold tracking-[0.2em] text-cyan-500 uppercase opacity-60">{card.label}</div>
+                <div className={`transition-all duration-500 transform ${hoveredCard === card.id ? '-translate-y-10 opacity-0' : 'translate-y-0 opacity-100'}`}>
+                  <div className="text-[9px] font-bold tracking-[0.4em] text-gray-500 uppercase mb-2">{card.title}</div>
+                  <div className="text-4xl font-black tracking-tighter text-white mb-1.5">{card.number}</div>
+                  <div className="text-[9px] font-bold tracking-[0.2em] text-cyan-500 uppercase opacity-60">{card.label}</div>
                 </div>
 
-                <div className={`absolute bottom-12 left-12 right-12 transition-all duration-500 ease-out transform ${hoveredCard === card.id ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0 pointer-events-none'}`}>
-                  <div className="flex items-center space-x-3 mb-4">
-                    <Info className="w-4 h-4 text-cyan-500" />
+                <div className={`absolute bottom-10 left-10 right-10 transition-all duration-500 ease-out transform ${hoveredCard === card.id ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0 pointer-events-none'}`}>
+                  <div className="flex items-center space-x-2.5 mb-3">
+                    <Info className="w-3.5 h-3.5 text-cyan-500" />
                     <span className="text-[10px] font-bold tracking-[0.4em] text-cyan-500 uppercase">Operational Truth</span>
                   </div>
-                  <p className="text-lg text-gray-200 font-medium leading-relaxed italic">
+                  <p className="text-base text-gray-200 font-medium leading-relaxed italic">
                     "{card.insight}"
                   </p>
-                  <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-[10px] font-bold tracking-[0.3em] text-gray-500 uppercase">
+                  <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-[9px] font-bold tracking-[0.3em] text-gray-500 uppercase">
                     <span>Deploy Module</span>
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
               </div>
-              <div className={`absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-[50px] transition-opacity duration-700 ${hoveredCard === card.id ? 'opacity-100' : 'opacity-0'}`} />
+              <div className={`absolute -bottom-8 -right-8 w-32 h-32 bg-cyan-500/10 rounded-full blur-[40px] transition-opacity duration-700 ${hoveredCard === card.id ? 'opacity-100' : 'opacity-0'}`} />
             </div>
           ))}
         </div>
