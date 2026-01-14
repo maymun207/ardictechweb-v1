@@ -112,11 +112,11 @@ const LossAnalysis = () => {
           
           {/* Headline Stack */}
           <div className="space-y-4 pt-12">
-            <div className="flex items-center space-x-3 text-[10px] font-bold tracking-[0.4em] text-cyan-500 uppercase">
+            <div className="flex items-center space-x-3 text-[12.65px] font-bold tracking-[0.4em] text-cyan-500 uppercase">
               <div className="w-12 h-[1px] bg-cyan-500" />
               <span>Diagnostic Analysis</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tighter uppercase flex flex-col">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tighter flex flex-col" style={{ gap: '0.2pt' }}>
               <span className="text-white/20 transition-all duration-700 hover:text-white/40 cursor-default">Unseen Data.</span>
               <span className="text-white/40 transition-all duration-700 hover:text-white/60 cursor-default">Silenced Value.</span>
               <span className="text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.1)] cursor-default">Untapped <br/>Potential.</span>
@@ -125,7 +125,7 @@ const LossAnalysis = () => {
 
           {/* Right Metrics Block: Two Lines, Dash included on the first line */}
           <div className="w-full lg:w-auto flex flex-col items-end pt-12">
-            <div className="text-[11px] font-bold tracking-[0.4em] text-cyan-500 uppercase mb-4 text-right">
+            <div className="text-[12.65px] font-bold tracking-[0.4em] text-cyan-500 uppercase mb-4 text-right">
               Total Addressable Loss
             </div>
             
@@ -142,12 +142,12 @@ const LossAnalysis = () => {
             </div>
 
             <div className="flex flex-col items-end gap-2">
-              <div className="flex justify-end gap-6 text-[12px] font-semibold tracking-[0.3em] text-gray-400 uppercase">
+              <div className="flex justify-end gap-6 text-[13.8px] font-semibold tracking-[0.3em] text-gray-400 uppercase">
                 <span>9 Months Payback</span>
                 <span className="w-1.5 h-1.5 bg-cyan-900 rounded-full self-center" />
                 <span>14-22 Months ROI</span>
               </div>
-              <div className="text-[12px] font-semibold text-gray-400 tracking-[0.2em] uppercase bg-white/5 px-3 py-1 rounded">
+              <div className="text-[13.8px] font-semibold text-gray-400 tracking-[0.2em] uppercase bg-white/5 px-3 py-1 rounded">
                 Annual Loss Estimate (Per $500M Revenue)
               </div>
             </div>
@@ -161,10 +161,18 @@ const LossAnalysis = () => {
               key={card.id}
               onMouseEnter={() => setHoveredCard(card.id)}
               onMouseLeave={() => setHoveredCard(null)}
-              className="group relative h-[304px] rounded-[32px] overflow-hidden bg-white/[0.03] border border-white/5 transition-all duration-500 hover:bg-white/[0.08] hover:border-cyan-500/20"
+              className="group relative h-[304px] rounded-[32px] overflow-hidden border transition-all duration-500"
+              style={{
+                background: hoveredCard === card.id 
+                  ? 'linear-gradient(135deg, rgba(15, 23, 42, 1) 0%, rgba(30, 58, 138, 1) 100%)'
+                  : 'rgba(255, 255, 255, 0.03)',
+                borderColor: hoveredCard === card.id 
+                  ? 'rgba(59, 130, 246, 0.3)'
+                  : 'rgba(255, 255, 255, 0.05)'
+              }}
             >
-              <div className="absolute inset-0 p-10 flex flex-col justify-between z-20">
-                <div className="flex justify-between items-start">
+              <div className="absolute inset-0 flex flex-col justify-start z-20" style={{ paddingTop: '1pt', paddingLeft: '2.5rem', paddingRight: '2.5rem', paddingBottom: '2.5rem' }}>
+                <div className={`flex justify-between items-start mb-6 transition-all duration-500 ${hoveredCard === card.id ? 'opacity-0' : 'opacity-100'}`}>
                   <div className={`p-3 rounded-xl bg-black border border-white/10 text-cyan-500 transition-all duration-500 ${hoveredCard === card.id ? 'scale-110 shadow-[0_0_20px_rgba(6,182,212,0.3)]' : ''}`}>
                     {card.icon}
                   </div>
@@ -174,23 +182,15 @@ const LossAnalysis = () => {
                 </div>
 
                 <div className={`transition-all duration-500 transform ${hoveredCard === card.id ? '-translate-y-10 opacity-0' : 'translate-y-0 opacity-100'}`}>
-                  <div className="text-[9px] font-bold tracking-[0.4em] text-gray-500 uppercase mb-2">{card.title}</div>
-                  <div className="text-4xl font-black tracking-tighter text-white mb-1.5">{card.number}</div>
-                  <div className="text-[9px] font-bold tracking-[0.2em] text-cyan-500 uppercase opacity-60">{card.label}</div>
+                  <div className={`text-[18.56px] font-bold tracking-[0.4em] text-gray-500 uppercase ${card.id === 4 ? 'mb-6' : 'mb-2'}`}>{card.title}</div>
+                  <div className="text-4xl font-black tracking-tighter text-white mb-1.5 min-h-[3.5rem]">{card.number}</div>
+                  <div className="text-[18.56px] font-bold tracking-[0.2em] text-cyan-500 uppercase opacity-60">{card.label}</div>
                 </div>
 
-                <div className={`absolute bottom-10 left-10 right-10 transition-all duration-500 ease-out transform ${hoveredCard === card.id ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0 pointer-events-none'}`}>
-                  <div className="flex items-center space-x-2.5 mb-3">
-                    <Info className="w-3.5 h-3.5 text-cyan-500" />
-                    <span className="text-[10px] font-bold tracking-[0.4em] text-cyan-500 uppercase">Operational Truth</span>
-                  </div>
-                  <p className="text-base text-gray-200 font-medium leading-relaxed italic">
+                <div className={`absolute left-10 right-10 transition-all duration-500 ease-out transform ${hoveredCard === card.id ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0 pointer-events-none'}`} style={{ bottom: hoveredCard === card.id ? 'calc(2.5rem * 0.8 + (100% - 2.5rem * 0.8) * 0.2)' : '2.5rem' }}>
+                  <p className="text-lg text-gray-200 font-medium leading-relaxed italic">
                     "{card.insight}"
                   </p>
-                  <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-[9px] font-bold tracking-[0.3em] text-gray-500 uppercase">
-                    <span>Deploy Module</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </div>
                 </div>
               </div>
               <div className={`absolute -bottom-8 -right-8 w-32 h-32 bg-cyan-500/10 rounded-full blur-[40px] transition-opacity duration-700 ${hoveredCard === card.id ? 'opacity-100' : 'opacity-0'}`} />

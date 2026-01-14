@@ -108,25 +108,13 @@ const Page3 = () => {
             </motion.p>
           </motion.div>
 
-          {/* Right Side: Text Content with Glassmorphism */}
+          {/* Right Side: Text Content */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex-1 max-w-2xl space-y-8 relative"
           >
-            {/* Glassmorphism backdrop */}
-            <div 
-              className="absolute inset-0 rounded-2xl -z-10"
-              style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                border: '1px solid rgba(255, 255, 255, 0.05)',
-                boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
-              }}
-            />
-            
             <div className="relative z-10 p-8 space-y-8">
               {/* Main Headline - Staggered by word */}
               <motion.h1
